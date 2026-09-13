@@ -28,7 +28,11 @@ export function PlateLink({
         {children}
         {external && <span className="sr-only"> (abre em nova aba)</span>}
       </span>
-      {icon && <Icon name={icon} className="plate-icon size-[1.125rem]" />}
+      {icon && (
+        <span className="plate-icon">
+          <Icon name={icon} className="size-[1.125rem]" />
+        </span>
+      )}
     </a>
   );
 }

@@ -71,10 +71,14 @@ export function SiteHeader() {
       />
       <header
         data-scrolled={scrolled || open}
-        className="fixed inset-x-0 top-0 z-40 transition-[background-color,box-shadow,backdrop-filter] duration-500 ease-out-expo data-[scrolled=true]:bg-asphalt/85 data-[scrolled=true]:shadow-[inset_0_-1px_0_var(--color-line)] data-[scrolled=true]:backdrop-blur-md"
+        className="fixed inset-x-0 top-0 z-40 transition-[background-color,box-shadow] duration-500 ease-out-expo data-[scrolled=true]:bg-asphalt/85 data-[scrolled=true]:shadow-[inset_0_-1px_0_var(--color-line)] data-[scrolled=true]:backdrop-blur-md"
       >
         <div className="mx-auto flex h-[4.5rem] max-w-page items-center justify-between gap-6 px-gutter">
-          <a href="#inicio" className="-m-2 p-2" aria-label={`${business.name}, voltar ao início`}>
+          <a
+            href="#inicio"
+            className="-m-2 p-2 transition-opacity duration-300 hover:opacity-80"
+            aria-label={`${business.name}, voltar ao início`}
+          >
             <Wordmark />
           </a>
 
@@ -122,7 +126,7 @@ export function SiteHeader() {
       <div
         id="menu-mobile"
         data-open={open}
-        className="menu-panel fixed inset-0 z-30 flex flex-col bg-asphalt px-gutter pb-[max(2rem,env(safe-area-inset-bottom))] pt-28 md:hidden"
+        className="menu-panel fixed inset-0 z-30 flex flex-col overscroll-contain bg-asphalt px-gutter pb-[max(2rem,env(safe-area-inset-bottom))] pt-28 md:hidden"
       >
         <nav aria-label={content.menu.label}>
           <ul className="flex flex-col gap-1">

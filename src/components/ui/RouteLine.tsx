@@ -32,7 +32,9 @@ export function RouteLine() {
           {route.note}
         </span>
         <span className="text-right">
-          <span className="block text-chalk">{business.name}</span>
+          <span translate="no" className="block text-chalk">
+            {business.name}
+          </span>
           <span className="block text-dust">{streetLine}</span>
         </span>
       </figcaption>

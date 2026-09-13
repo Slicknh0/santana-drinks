@@ -32,7 +32,7 @@ export function SiteFooter() {
           ))}
           <p>{content.footer.illustrativeNote}</p>
           <p className="mt-3">
-            © {year} {business.name}
+            © {year} <span translate="no">{business.name}</span>
           </p>
         </div>
       </div>

@@ -35,8 +35,9 @@ export function CopyAddressButton() {
         <Icon name={state === "done" ? "check" : "copy"} className="size-[1.125rem] text-champagne" />
         {state === "done" ? copy.done : copy.idle}
       </button>
-      <p role="status" className="text-sm text-champagne-bright empty:hidden">
-        {state === "failed" ? copy.failed : ""}
+      {/* Success is announced here too: a changing button label alone is not read by screen readers. */}
+      <p role="status" className={state === "failed" ? "text-sm text-champagne-bright" : "sr-only"}>
+        {state === "failed" ? copy.failed : state === "done" ? copy.done : ""}
       </p>
     </div>
   );
