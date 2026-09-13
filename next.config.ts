@@ -5,7 +5,8 @@ const nextConfig: NextConfig = {
   turbopack: { root: __dirname },
   poweredByHeader: false,
   images: {
-    formats: ["image/avif", "image/webp"],
+    // WebP only: AVIF encoding is several times slower and stalled cold-cache image requests.
+    formats: ["image/webp"],
     qualities: [70, 80],
   },
 };

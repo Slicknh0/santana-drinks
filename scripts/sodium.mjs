@@ -11,7 +11,7 @@ import sharp from "sharp";
 
 const SRC = "assets-src/photos";
 const OUT = "src/assets/photos";
-const MAX_WIDTH = 2400;
+const MAX_SIDE = 2400;
 
 // Luminance -> color stops. Shadows stay near the page ground so photos melt into it.
 const STOPS = [
@@ -42,7 +42,7 @@ const files = (await readdir(SRC)).filter((f) => /\.(jpe?g|png|webp)$/i.test(f))
 for (const file of files) {
   const { data, info } = await sharp(path.join(SRC, file))
     .rotate()
-    .resize({ width: MAX_WIDTH, withoutEnlargement: true })
+    .resize({ width: MAX_SIDE, height: MAX_SIDE, fit: "inside", withoutEnlargement: true })
     .removeAlpha()
     .raw()
     .toBuffer({ resolveWithObject: true });

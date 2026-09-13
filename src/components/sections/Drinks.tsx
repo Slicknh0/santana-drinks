@@ -6,7 +6,7 @@ import { drinksGallery } from "@/data/media";
 const galleryLayout = [
   { sizes: "(min-width: 768px) 42vw, 80vw", className: "md:col-span-5", image: "object-cover" },
   { sizes: "(min-width: 768px) 25vw, 80vw", className: "md:col-span-3 md:mt-44", image: "object-cover object-[58%_50%]" },
-  { sizes: "(min-width: 768px) 34vw, 80vw", className: "md:col-span-4 md:mt-20", image: "object-cover object-[68%_50%]" },
+  { sizes: "(min-width: 768px) 34vw, 80vw", className: "md:col-span-4 md:mt-20", image: "object-cover object-[50%_60%]" },
 ];
 
 export function Drinks() {

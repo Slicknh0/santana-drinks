@@ -40,7 +40,7 @@ export function Hero() {
         </h1>
 
         <div className="mt-7 flex flex-col gap-10 md:mt-12 md:flex-row md:items-end md:justify-between">
-          <div className="max-w-[27rem]">
+          <div className="max-w-[30rem]">
             <p className="text-lg text-chalk/90">{content.hero.lead}</p>
             <div className="mt-8 flex flex-wrap items-center gap-x-7 gap-y-5">
               <PlateLink href={directionsUrl} external icon="arrowUpRight" className="w-full sm:w-auto">

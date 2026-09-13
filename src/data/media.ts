@@ -4,7 +4,7 @@
  * assets-src/photos, rode `npm run photos`, importe aqui e marque illustrative: false.
  */
 import type { StaticImageData } from "next/image";
-import casaMaoCopo from "@/assets/photos/casa-mao-copo.jpg";
+import drinksBalcao from "@/assets/photos/drinks-balcao.jpg";
 import drinksBrinde from "@/assets/photos/drinks-brinde.jpg";
 import drinksCoador from "@/assets/photos/drinks-coador.jpg";
 import drinksDoseGelo from "@/assets/photos/drinks-dose-gelo.jpg";
@@ -27,10 +27,10 @@ export const photos = {
     credit: "https://unsplash.com/photos/a-glass-of-liquid-e1eu-v1vXWs",
   },
   about: {
-    src: casaMaoCopo,
-    alt: "Mão segurando um copo de drink na penumbra",
+    src: drinksMaoBalcao,
+    alt: "Mão apoiando um copo de drink sobre o balcão",
     illustrative: true,
-    credit: "https://unsplash.com/photos/person-holding-clear-drinking-glass-41dj6h1xEfk",
+    credit: "https://unsplash.com/photos/a-womans-hand-holding-a-glass-of-whiskey-xz6aXA7EbBY",
   },
   interlude: {
     src: interludioPoste,
@@ -60,9 +60,9 @@ export const drinksGallery: Photo[] = [
     credit: "https://unsplash.com/photos/amber-cocktail-pouring-over-ice-dmkmrNptMpw",
   },
   {
-    src: drinksMaoBalcao,
-    alt: "Mão apoiando um copo de drink sobre o balcão",
+    src: drinksBalcao,
+    alt: "Três drinks enfileirados sobre o balcão, com luzes desfocadas ao fundo",
     illustrative: true,
-    credit: "https://unsplash.com/photos/a-womans-hand-holding-a-glass-of-whiskey-xz6aXA7EbBY",
+    credit: "https://unsplash.com/photos/two-glasses-of-different-types-of-drinks-on-a-bar-wUZbQhehzJQ",
   },
 ];

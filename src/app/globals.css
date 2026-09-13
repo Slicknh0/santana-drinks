@@ -39,7 +39,7 @@
   --tracking-plate: 0.12em;
 
   --spacing-gutter: clamp(1rem, 0.4rem + 2.6vw, 3rem);
-  --spacing-section: clamp(6rem, 3.5rem + 9vw, 12rem);
+  --spacing-section: clamp(5rem, 3rem + 8vw, 11rem);
 
   --radius-plate: 0.3125rem;
 
@@ -341,7 +341,7 @@
       .lit::after {
         animation: lit-on linear both;
         animation-timeline: view();
-        animation-range: entry 5% cover 42%;
+        animation-range: entry 0% cover 32%;
       }
 
       .lit img {
@@ -501,7 +501,7 @@
 
 @keyframes lit-on {
   from {
-    opacity: 0.8;
+    opacity: 0.6;
   }
   to {
     opacity: 0;

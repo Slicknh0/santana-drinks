@@ -8,19 +8,12 @@ export function About() {
 
   return (
     <section id={about.id} aria-labelledby="about-title" className="py-section">
-      <div className="mx-auto grid max-w-page gap-y-12 px-gutter md:grid-cols-12 md:gap-x-6 md:gap-y-20">
+      <div className="mx-auto grid max-w-page gap-y-12 px-gutter md:grid-cols-12 md:gap-x-6 md:gap-y-16">
         <h2 id="about-title" className="display text-4xl md:col-span-10 lg:col-span-8">
           {about.title}
         </h2>
 
-        <LitImage
-          photo={photos.about}
-          sizes="(min-width: 768px) 42vw, 100vw"
-          className="aspect-[4/5] rounded-plate md:col-span-5"
-          imageClassName="object-cover object-[64%_50%]"
-        />
-
-        <div className="flex flex-col justify-end gap-6 text-lg md:col-span-6 md:col-start-7 lg:col-span-5 lg:col-start-8">
+        <div className="flex flex-col gap-6 text-lg md:col-span-5 md:pt-1">
           {about.paragraphs.map((paragraph, index) => (
             <p key={paragraph} className={`max-w-copy ${index === 0 ? "text-chalk" : "text-dust"}`}>
               {paragraph}
@@ -28,7 +21,14 @@ export function About() {
           ))}
         </div>
 
-        <div className="md:col-span-12">
+        <LitImage
+          photo={photos.about}
+          sizes="(min-width: 1024px) 45vw, (min-width: 768px) 55vw, 100vw"
+          className="aspect-[3/2] rounded-plate md:col-span-7 md:col-start-6 lg:col-span-6 lg:col-start-7"
+          imageClassName="object-cover object-[60%_55%]"
+        />
+
+        <div className="md:col-span-12 md:mt-4">
           <RouteLine />
         </div>
       </div>

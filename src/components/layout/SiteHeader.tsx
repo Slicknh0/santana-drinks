@@ -122,7 +122,7 @@ export function SiteHeader() {
       <div
         id="menu-mobile"
         data-open={open}
-        className="menu-panel fixed inset-0 z-30 flex flex-col bg-asphalt/[0.97] px-gutter pb-[max(2rem,env(safe-area-inset-bottom))] pt-28 md:hidden"
+        className="menu-panel fixed inset-0 z-30 flex flex-col bg-asphalt px-gutter pb-[max(2rem,env(safe-area-inset-bottom))] pt-28 md:hidden"
       >
         <nav aria-label={content.menu.label}>
           <ul className="flex flex-col gap-1">

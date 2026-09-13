@@ -7,6 +7,9 @@ import { formatMeters } from "@/lib/maps";
 
 const distance = formatMeters(business.transit.straightLineMeters);
 
+/** Troca espaços por espaço inseparável: "São Paulo" nunca quebra entre linhas. */
+const nb = (text: string) => text.replace(/\x20/g, String.fromCharCode(160));
+
 export const navigation = [
   { label: "A casa", href: "#a-casa" },
   { label: "Drinks", href: "#drinks" },
@@ -16,7 +19,6 @@ export const navigation = [
 export const seo = {
   title: "Santana Drinks | Bar de drinks em Santana, Zona Norte de SP",
   description: `Bar de drinks na ${business.address.streetShort}, ${business.address.number}, em Santana, Zona Norte de São Paulo, a cerca de ${distance} do metrô. Veja como chegar.`,
-  ogImageAlt: "Santana Drinks, bar de drinks em Santana, São Paulo",
 };
 
 export const content = {
@@ -26,7 +28,7 @@ export const content = {
 
   hero: {
     headingSuffix: "bar de drinks em Santana, Zona Norte de São Paulo",
-    lead: "Bar de drinks em Santana, na Zona Norte de São Paulo, a poucos minutos a pé do metrô.",
+    lead: `Bar de drinks em Santana, na ${nb("Zona Norte")} de ${nb("São Paulo")}, a poucos minutos a pé do metrô.`,
   },
 
   about: {
@@ -53,7 +55,7 @@ export const content = {
 
   interlude: {
     line: "Do lado de cá do rio.",
-    caption: "Santana, Zona Norte de São Paulo",
+    caption: `Santana, ${nb("Zona Norte")} de ${nb("São Paulo")}`,
   },
 
   visit: {

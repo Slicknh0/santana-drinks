@@ -72,7 +72,7 @@ export function Visit() {
               )}
             </InfoRow>
             <InfoRow icon="crosshair" label={visit.labels.coordinates}>
-              <span className="font-plate tracking-[0.04em]">{coordinatesLabel}</span>
+              <span className="tabular-nums">{coordinatesLabel}</span>
             </InfoRow>
             {channels.length > 0 && (
               <InfoRow icon={channelIcons[channels[0].id]} label={visit.labels.contact}>
