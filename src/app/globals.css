@@ -72,6 +72,19 @@
     }
   }
 
+  /* Below md the fixed "Como chegar" bar covers ~6rem; keep keyboard focus clear of it (WCAG 2.4.11). */
+  @media (width < 48rem) {
+    html {
+      scroll-padding-bottom: 6.5rem;
+    }
+  }
+
+  /* Tailwind v4 preflight resets buttons to the default cursor. */
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]) {
+    cursor: pointer;
+  }
+
   body {
     background-color: var(--color-asphalt);
     color: var(--color-chalk);
