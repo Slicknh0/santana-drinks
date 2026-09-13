@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-13T10:00:00-03:00",
+  "title": "Design System: Santana Drinks",
+  "extensions": {
+    "colorMeta": {
+      "asphalt": { "role": "neutral", "displayName": "Asfalto", "canonical": "#0e0d0a", "tonalRamp": ["#0e0d0a", "#1d1a12", "#2e2a20", "#474236", "#686252", "#8f8875", "#bdb6a3", "#f3eee2"] },
+      "night": { "role": "neutral", "displayName": "Noite", "canonical": "#15130e", "tonalRamp": ["#0e0d0a", "#15130e", "#2e2a20", "#474236", "#686252", "#8f8875", "#bdb6a3", "#f3eee2"] },
+      "enamel": { "role": "neutral", "displayName": "Esmalte", "canonical": "#1d1a12", "tonalRamp": ["#0e0d0a", "#1d1a12", "#2e2a20", "#474236", "#686252", "#8f8875", "#bdb6a3", "#f3eee2"] },
+      "sodium": { "role": "secondary", "displayName": "Luz de sódio", "canonical": "#e2a64b", "tonalRamp": ["#2b1c08", "#4a3010", "#6d4719", "#925f23", "#b8792f", "#e2a64b", "#edc27f", "#f7e0b6"] },
+      "champagne": { "role": "primary", "displayName": "Champanhe fosco", "canonical": "#d8bd72", "tonalRamp": ["#2a2210", "#463a1c", "#65552b", "#86723b", "#a88f4d", "#d8bd72", "#ebd394", "#f5ebcb"] },
+      "champagne-bright": { "role": "primary", "displayName": "Champanhe aceso", "canonical": "#ebd394", "tonalRamp": ["#2a2210", "#463a1c", "#65552b", "#86723b", "#a88f4d", "#d8bd72", "#ebd394", "#f5ebcb"] },
+      "chalk": { "role": "neutral", "displayName": "Cal", "canonical": "#f3eee2", "tonalRamp": ["#0e0d0a", "#1d1a12", "#2e2a20", "#474236", "#686252", "#8f8875", "#bdb6a3", "#f3eee2"] },
+      "dust": { "role": "neutral", "displayName": "Poeira", "canonical": "#aea690", "tonalRamp": ["#0e0d0a", "#1d1a12", "#2e2a20", "#474236", "#686252", "#aea690", "#cfc9b8", "#f3eee2"] },
+      "line": { "role": "neutral", "displayName": "Filete", "canonical": "rgb(216 189 114 / 0.16)" },
+      "line-strong": { "role": "neutral", "displayName": "Filete forte", "canonical": "rgb(216 189 114 / 0.36)" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Só a palavra Santana no hero." },
+      "headline": { "displayName": "Headline", "purpose": "Títulos de seção curtos, alinhados à esquerda." },
+      "title": { "displayName": "Title", "purpose": "Subtítulos de lista e links do menu mobile." },
+      "lead": { "displayName": "Lead", "purpose": "Primeira frase de seção e parágrafos de apresentação." },
+      "body": { "displayName": "Body", "purpose": "Texto corrido e valores de listas." },
+      "small": { "displayName": "Small", "purpose": "Navegação, rótulos, legendas e notas legais." },
+      "button": { "displayName": "Button", "purpose": "Texto das placas de ação." },
+      "plate-label": { "displayName": "Plate label", "purpose": "Caixa alta condensada, só dentro de placas." }
+    },
+    "shadows": [
+      { "name": "action-glow", "value": "0 10px 30px -12px rgb(226 166 75 / 0.45)", "purpose": "Brilho âmbar sob a placa champanhe da ação principal." },
+      { "name": "action-glow-hover", "value": "0 14px 40px -12px rgb(226 166 75 / 0.6)", "purpose": "Hover da placa principal." },
+      { "name": "hanging-plate", "value": "0 24px 48px -24px rgb(0 0 0 / 0.8)", "purpose": "Placas de rua." },
+      { "name": "pin-halo", "value": "0 0 0 1px rgb(216 189 114 / 0.36), 0 0 80px rgb(226 166 75 / 0.35)", "purpose": "Marcador do mapa antes de carregar." }
+    ],
+    "motion": [
+      { "name": "ease-out-expo", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Transições de estado (hover, menu, CTA fixo)." },
+      { "name": "ease-lamp", "value": "cubic-bezier(0.3, 0.1, 0.2, 1)", "purpose": "Acendimento do poste no hero." },
+      { "name": "duration-quick", "value": "280ms", "purpose": "Pressionar e deslocar ícones." },
+      { "name": "duration-calm", "value": "700ms", "purpose": "Cor, filete e sombra das placas." },
+      { "name": "lamp-warm-up", "value": "1.7s, delay 0.1s", "purpose": "Brilho vermelho vira âmbar e a foto do hero clareia, uma vez no carregamento." },
+      { "name": "lamp-on-scroll", "value": "animation-timeline: view(); range entry 10% cover 45%", "purpose": "Poste do interlúdio acende conforme entra na tela." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "40rem" },
+      { "name": "md", "value": "48rem" },
+      { "name": "lg", "value": "64rem" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Placa champanhe para a única ação principal: Como chegar.",
+      "html": "<a class=\"ds-plate ds-plate-solid\" href=\"#\"><span>Como chegar</span><svg class=\"ds-plate-icon\" viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 17 17 7\"/><path d=\"M9 7h8v8\"/></svg></a>",
+      "css": ".ds-plate { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 0.875rem; min-height: 3.25rem; padding: 0 1.5rem; border-radius: 0.3125rem; font-family: Barlow, ui-sans-serif, sans-serif; font-size: 0.9375rem; font-weight: 600; letter-spacing: 0.01em; line-height: 1; text-decoration: none; white-space: nowrap; transition: background-color 700ms cubic-bezier(0.16,1,0.3,1), color 700ms cubic-bezier(0.16,1,0.3,1), box-shadow 700ms cubic-bezier(0.16,1,0.3,1), transform 280ms cubic-bezier(0.16,1,0.3,1); } .ds-plate::after { content: \"\"; position: absolute; inset: 4px; border: 1px solid currentColor; border-radius: 2px; opacity: 0.26; pointer-events: none; transition: opacity 700ms cubic-bezier(0.16,1,0.3,1); } .ds-plate:hover::after { opacity: 0.6; } .ds-plate:active { transform: translateY(1px); } .ds-plate:focus-visible { outline: 2px solid #d8bd72; outline-offset: 3px; } .ds-plate-icon { transition: transform 700ms cubic-bezier(0.16,1,0.3,1); } .ds-plate:hover .ds-plate-icon { transform: translateX(3px); } .ds-plate-solid { background: #d8bd72; color: #0e0d0a; box-shadow: 0 10px 30px -12px rgb(226 166 75 / 0.45); } .ds-plate-solid:hover { background: #ebd394; box-shadow: 0 14px 40px -12px rgb(226 166 75 / 0.6); }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Placa vazada para ações secundárias (Ver no Google Maps, Mostrar mapa).",
+      "html": "<a class=\"ds-plate ds-plate-ghost\" href=\"#\"><span>Ver no Google Maps</span></a>",
+      "css": ".ds-plate { position: relative; display: inline-flex; align-items: center; justify-content: center; min-height: 3.25rem; padding: 0 1.5rem; border-radius: 0.3125rem; font-family: Barlow, ui-sans-serif, sans-serif; font-size: 0.9375rem; font-weight: 600; letter-spacing: 0.01em; line-height: 1; text-decoration: none; transition: color 700ms cubic-bezier(0.16,1,0.3,1), box-shadow 700ms cubic-bezier(0.16,1,0.3,1); } .ds-plate::after { content: \"\"; position: absolute; inset: 4px; border: 1px solid currentColor; border-radius: 2px; opacity: 0.26; pointer-events: none; } .ds-plate:hover::after { opacity: 0.6; } .ds-plate:focus-visible { outline: 2px solid #d8bd72; outline-offset: 3px; } .ds-plate-ghost { background: rgb(14 13 10 / 0.4); color: #f3eee2; box-shadow: inset 0 0 0 1px rgb(216 189 114 / 0.36); } .ds-plate-ghost:hover { color: #ebd394; box-shadow: inset 0 0 0 1px #d8bd72; }"
+    },
+    {
+      "name": "Brand Plate",
+      "kind": "custom",
+      "refersTo": "brand-plate",
+      "description": "Marca provisória: Santana em Imbue + plaqueta DRINKS.",
+      "html": "<span class=\"ds-brand\"><span class=\"ds-brand-word\">Santana</span> <span class=\"ds-brand-plate\">Drinks</span></span>",
+      "css": ".ds-brand { display: inline-flex; align-items: center; gap: 0.625rem; } .ds-brand-word { font-family: Imbue, Georgia, serif; font-variation-settings: \"opsz\" 100; font-size: 1.75rem; line-height: 1; letter-spacing: -0.015em; color: #f3eee2; } .ds-brand-plate { position: relative; display: inline-flex; align-items: center; padding: 0.46em 0.62em 0.42em 0.82em; border-radius: max(3px, 0.28em); background: #d8bd72; color: #0e0d0a; font-family: \"Barlow Condensed\", Barlow, sans-serif; font-weight: 600; font-size: 0.625rem; letter-spacing: 0.2em; text-transform: uppercase; line-height: 1; } .ds-brand-plate::after { content: \"\"; position: absolute; inset: max(2px, 0.2em); border: 1px solid rgb(14 13 10 / 0.34); border-radius: max(1px, 0.12em); }"
+    },
+    {
+      "name": "Street Plate",
+      "kind": "custom",
+      "refersTo": "street-plate",
+      "description": "Placa esmaltada com endereço; no hero é link para a seção de endereço.",
+      "html": "<a class=\"ds-street-plate\" href=\"#\"><span>R. Dr. Gabriel Piza, 544</span><span class=\"ds-street-plate-sub\"><span>Santana</span><span>02036-011</span></span></a>",
+      "css": ".ds-street-plate { position: relative; display: inline-flex; flex-direction: column; gap: 0.25rem; padding: 0.875rem 1.25rem 0.9375rem; border-radius: 0.3125rem; background: #1d1a12; color: #d8bd72; font-family: \"Barlow Condensed\", Barlow, sans-serif; font-weight: 600; font-size: 1.375rem; letter-spacing: 0.12em; text-transform: uppercase; line-height: 1.05; text-decoration: none; box-shadow: 0 24px 48px -24px rgb(0 0 0 / 0.8); } .ds-street-plate::after { content: \"\"; position: absolute; inset: 5px; border: 1px solid rgb(216 189 114 / 0.36); border-radius: 2px; pointer-events: none; transition: border-color 700ms cubic-bezier(0.16,1,0.3,1); } .ds-street-plate:hover::after { border-color: #d8bd72; } .ds-street-plate:focus-visible { outline: 2px solid #d8bd72; outline-offset: 3px; } .ds-street-plate-sub { display: flex; justify-content: space-between; gap: 2.5rem; font-size: 0.62em; color: #aea690; }"
+    },
+    {
+      "name": "Navigation Link",
+      "kind": "nav",
+      "description": "Links do cabeçalho em Barlow 400, poeira que vira cal no hover.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#\">A casa</a><a href=\"#\">Drinks</a><a href=\"#\">Endereço</a></nav>",
+      "css": ".ds-nav { display: flex; gap: 2.25rem; } .ds-nav a { font-family: Barlow, ui-sans-serif, sans-serif; font-size: 0.9375rem; color: #aea690; text-decoration: none; transition: color 300ms cubic-bezier(0.16,1,0.3,1); } .ds-nav a:hover { color: #f3eee2; } .ds-nav a:focus-visible { outline: 2px solid #d8bd72; outline-offset: 3px; border-radius: 2px; }"
+    },
+    {
+      "name": "Route Line",
+      "kind": "custom",
+      "description": "Diagrama de linha de metrô com distância real entre estação e bar.",
+      "html": "<div class=\"ds-route\"><span class=\"ds-route-station\"></span><span class=\"ds-route-track\"></span><span class=\"ds-route-distance\">400 m</span><span class=\"ds-route-track\"></span><span class=\"ds-route-end\">Drinks</span></div>",
+      "css": ".ds-route { display: flex; align-items: center; gap: 1.25rem; } .ds-route-station { width: 0.875rem; height: 0.875rem; flex: none; border: 2px solid #d8bd72; border-radius: 9999px; background: #0e0d0a; } .ds-route-track { flex: 1 1 0%; height: 1px; background: #d8bd72; } .ds-route-distance { flex: none; font-family: \"Barlow Condensed\", Barlow, sans-serif; font-weight: 600; font-size: 1.25rem; letter-spacing: 0.04em; color: #d8bd72; } .ds-route-end { position: relative; flex: none; padding: 0.46em 0.62em 0.42em 0.82em; border-radius: 3px; background: #d8bd72; color: #0e0d0a; font-family: \"Barlow Condensed\", Barlow, sans-serif; font-weight: 600; font-size: 0.625rem; letter-spacing: 0.2em; text-transform: uppercase; line-height: 1; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "A rua de Santana sob o poste de sódio",
+    "overview": "O sistema trata a página como uma rua de bairro à noite: chão de asfalto quase preto, uma única fonte de luz âmbar e sinalização urbana. A luz de vapor de sódio é monocromática, então tudo o que ela ilumina vira tom de âmbar; por isso as fotografias passam por um mapa de gradiente e perdem a cor original. O ouro aparece como champanhe fosco, nunca como neon. A voz tipográfica é editorial e noturna: uma serifa condensada de alto contraste (Imbue no tamanho óptico máximo) em escala de cartaz, contra uma sans de sinalização (Barlow) confortável para leitura. A densidade é baixa: poucas palavras por tela, muito respiro, composição assimétrica em grade de 12 colunas. O vocabulário de componentes vem das placas de rua de São Paulo e da sinalização do metrô: placas de cantos quase retos com filete interno, rótulos em caixa alta condensada só dentro das placas, e um diagrama de linha de metrô para distâncias reais.",
+    "keyCharacteristics": [
+      "Fundo escuro contínuo (asphalt), sem blocos de cor alternados",
+      "Um acento só (champanhe) para ação, marca e sinalização",
+      "Sódio usado como luz (brilhos radiais e sombra da ação principal), nunca como tinta",
+      "Fotografia em monocromia âmbar, sempre",
+      "Placas com filete interno no lugar de botões arredondados e cards",
+      "Movimento raro e ligado à luz: o poste acende"
+    ],
+    "rules": [
+      { "name": "The Sodium Rule", "body": "Sódio é luz, não tinta: só aparece em gradientes radiais e sombras difusas. Se um elemento precisa ser lido, ele é champanhe ou cal.", "section": "colors" },
+      { "name": "The One Accent Rule", "body": "Champanhe é o único acento. Não há segunda cor de destaque, nem estados em vermelho, verde ou azul.", "section": "colors" },
+      { "name": "The Plate-Only Caps Rule", "body": "Caixa alta condensada existe só dentro de uma placa. Nada de rótulos em caixa alta acima de títulos.", "section": "typography" },
+      { "name": "The Optical Size Rule", "body": "Imbue sempre com font-variation-settings: \"opsz\" 100 e peso 400; nunca em texto corrido.", "section": "typography" },
+      { "name": "The Light-Not-Lift Rule", "body": "Nada \"flutua\" com sombra cinza. Se algo precisa se destacar, recebe luz âmbar ou contraste de cor.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do reservar a placa champanhe sólida para a ação principal \"Como chegar\".",
+      "Do processar toda foto nova com `npm run photos` antes de publicar.",
+      "Do manter o fundo asphalt (#0e0d0a) contínuo e fundir fotos a ele com degradês.",
+      "Do usar espaço inseparável em nomes próprios curtos (\"São Paulo\", \"Zona Norte\") em textos de destaque.",
+      "Do manter um único momento de luz por cena: o poste do hero ao carregar e o do interlúdio ao rolar."
+    ],
+    "donts": [
+      "Don't usar amarelo saturado, neon, brilho em bordas ou texto em sódio (#e2a64b).",
+      "Don't publicar fotos coloridas ou sem o tratamento âmbar.",
+      "Don't colocar rótulos em caixa alta acima de títulos, nem caixa alta fora de placas.",
+      "Don't usar botões em pílula, cards com sombra cinza ou grades de cards iguais.",
+      "Don't animar a entrada de cada seção; movimento é luz, não coreografia."
+    ]
+  }
+}

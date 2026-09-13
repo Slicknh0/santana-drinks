@@ -29,6 +29,7 @@ export const content = {
   hero: {
     headingSuffix: "bar de drinks em Santana, Zona Norte de São Paulo",
     lead: `Bar de drinks em Santana, na ${nb("Zona Norte")} de ${nb("São Paulo")}, a poucos minutos a pé do metrô.`,
+    addressLinkLabel: "Ver endereço e como chegar",
   },
 
   about: {

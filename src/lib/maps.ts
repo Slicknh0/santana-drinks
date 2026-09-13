@@ -24,7 +24,10 @@ function toDms(value: number, positive: string, negative: string) {
   return `${degrees}°${String(minutes).padStart(2, "0")}′${seconds.padStart(4, "0")}″${value < 0 ? negative : positive}`;
 }
 
-export const coordinatesLabel = `${toDms(geo.latitude, "N", "S")} ${toDms(geo.longitude, "L", "O")}`;
+export const coordinates = {
+  latitude: toDms(geo.latitude, "N", "S"),
+  longitude: toDms(geo.longitude, "L", "O"),
+};
 
 export function formatMeters(meters: number) {
   return meters >= 1000

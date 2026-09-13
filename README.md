@@ -34,6 +34,7 @@ Defina `NEXT_PUBLIC_SITE_URL` no deploy (ex.: `https://seudominio.com.br`). Cano
 | Carta de drinks (a lista só aparece quando houver itens) | `src/data/drinks.ts` |
 | Fotos, textos alternativos e créditos | `src/data/media.ts` |
 | Cores, tipografia, espaçamentos, easing | `src/app/globals.css` (`@theme`) |
+| Regras do sistema visual (para novas páginas) | `DESIGN.md` e `.impeccable/design.json` |
 
 Campos `null` em `business.ts` ficam fora da interface e do JSON-LD. Ao preencher, aparecem sozinhos:
 

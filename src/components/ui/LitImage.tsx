@@ -8,7 +8,7 @@ interface LitImageProps {
   imageClassName?: string;
 }
 
-/** Foto que "acende" ao entrar na tela; o efeito vive em CSS (.lit), sem JavaScript. */
+/** Moldura de foto com fill. Com a classe `lit-lamp`, a foto acende conforme o scroll (CSS, sem JavaScript). */
 export function LitImage({
   photo,
   sizes,

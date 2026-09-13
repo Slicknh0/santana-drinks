@@ -13,7 +13,11 @@ export function Drinks() {
   const copy = content.drinks;
 
   return (
-    <section id={copy.id} aria-labelledby="drinks-title" className="py-section">
+    <section
+      id={copy.id}
+      aria-labelledby="drinks-title"
+      className="pt-section pb-[calc(var(--spacing-section)*0.5)]"
+    >
       <div className="mx-auto max-w-page px-gutter">
         <div className="grid gap-y-8 md:grid-cols-12 md:items-end md:gap-x-6">
           <h2 id="drinks-title" className="display text-4xl md:col-span-7">

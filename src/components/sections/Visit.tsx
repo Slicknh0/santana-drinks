@@ -7,7 +7,7 @@ import { business } from "@/data/business";
 import { content } from "@/data/content";
 import { getChannels, type ChannelId } from "@/lib/contact";
 import { formatPeriod } from "@/lib/hours";
-import { coordinatesLabel, directionsUrl } from "@/lib/maps";
+import { coordinates, directionsUrl } from "@/lib/maps";
 
 const channelIcons: Record<ChannelId, IconName> = {
   reservation: "calendar",
@@ -72,7 +72,10 @@ export function Visit() {
               )}
             </InfoRow>
             <InfoRow icon="crosshair" label={visit.labels.coordinates}>
-              <span className="tabular-nums">{coordinatesLabel}</span>
+              <span className="flex flex-wrap gap-x-4 tabular-nums">
+                <span>{coordinates.latitude}</span>
+                <span>{coordinates.longitude}</span>
+              </span>
             </InfoRow>
             {channels.length > 0 && (
               <InfoRow icon={channelIcons[channels[0].id]} label={visit.labels.contact}>

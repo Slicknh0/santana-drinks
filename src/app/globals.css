@@ -10,7 +10,6 @@
   --color-sodium: #e2a64b;
   --color-champagne: #d8bd72;
   --color-champagne-bright: #ebd394;
-  --color-brass: #a88639;
   --color-chalk: #f3eee2;
   --color-dust: #aea690;
   --color-line: rgb(216 189 114 / 0.16);
@@ -28,8 +27,6 @@
   --text-xl--line-height: 1.35;
   --text-2xl: clamp(1.75rem, 1.3rem + 1.8vw, 2.625rem);
   --text-2xl--line-height: 1.1;
-  --text-3xl: clamp(2.625rem, 1.6rem + 4vw, 5rem);
-  --text-3xl--line-height: 0.98;
   --text-4xl: clamp(3.25rem, 1.4rem + 7.4vw, 8.5rem);
   --text-4xl--line-height: 0.9;
   --text-mega: clamp(6.25rem, 1rem + 21vw, 21rem);
@@ -210,9 +207,7 @@
     letter-spacing: var(--tracking-plate);
     text-transform: uppercase;
     line-height: 1.05;
-    box-shadow:
-      0 1px 0 rgb(243 238 226 / 0.06) inset,
-      0 24px 48px -24px rgb(0 0 0 / 0.8);
+    box-shadow: 0 24px 48px -24px rgb(0 0 0 / 0.8);
   }
 
   .street-plate::after {
@@ -222,6 +217,11 @@
     border: 1px solid var(--color-line-strong);
     border-radius: 2px;
     pointer-events: none;
+    transition: border-color var(--duration-calm) var(--ease-out-expo);
+  }
+
+  a.street-plate:hover::after {
+    border-color: var(--color-champagne);
   }
 
   /* Marca: "Santana" em serifa + plaqueta "Drinks". Medidas em em para escalar junto com o texto. */
@@ -319,7 +319,6 @@
     animation: lamp-dim 1.7s var(--ease-lamp) 0.1s both;
   }
 
-  /* Luz acende conforme a foto entra na tela (ligada ao scroll, sem JavaScript). */
   .lit {
     position: relative;
     overflow: hidden;
@@ -327,7 +326,8 @@
     background-color: var(--color-night);
   }
 
-  .lit::after {
+  /* Só o poste do interlúdio acende com o scroll (sem JavaScript): o único momento de luz depois do hero. */
+  .lit-lamp::after {
     content: "";
     position: absolute;
     inset: 0;
@@ -338,13 +338,13 @@
 
   @supports (animation-timeline: view()) {
     @media (prefers-reduced-motion: no-preference) {
-      .lit::after {
+      .lit-lamp::after {
         animation: lit-on linear both;
         animation-timeline: view();
-        animation-range: entry 0% cover 32%;
+        animation-range: entry 10% cover 45%;
       }
 
-      .lit img {
+      .lit-lamp img {
         animation: lit-settle linear both;
         animation-timeline: view();
         animation-range: entry 0% exit 100%;
@@ -501,7 +501,7 @@
 
 @keyframes lit-on {
   from {
-    opacity: 0.6;
+    opacity: 0.88;
   }
   to {
     opacity: 0;
