@@ -26,7 +26,7 @@ export function MapEmbed() {
           <span className="grid size-16 place-items-center rounded-full bg-asphalt shadow-[0_0_0_1px_var(--color-line-strong),0_0_80px_rgb(226_166_75/0.35)]">
             <Icon name="pin" className="size-7 text-champagne" />
           </span>
-          <p className="text-lg font-medium tabular-nums tracking-[0.02em] text-champagne">{coordinatesLabel}</p>
+          <p className="text-lg tabular-nums tracking-[0.02em] text-champagne">{coordinatesLabel}</p>
           <button type="button" onClick={() => setLoaded(true)} className="plate plate-ghost">
             {map.load}
           </button>

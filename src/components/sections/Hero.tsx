@@ -46,7 +46,7 @@ export function Hero() {
               <PlateLink href={directionsUrl} external icon="arrowUpRight" className="w-full sm:w-auto">
                 {content.primaryCta}
               </PlateLink>
-              <a href={`#${content.visit.id}`} className="text-link text-sm font-medium text-dust">
+              <a href={`#${content.visit.id}`} className="text-link text-sm text-dust">
                 {streetLine}
               </a>
             </div>

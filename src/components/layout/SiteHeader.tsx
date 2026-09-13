@@ -84,7 +84,7 @@ export function SiteHeader() {
                 <li key={item.href}>
                   <a
                     href={item.href}
-                    className="text-sm font-medium text-dust transition-colors duration-300 hover:text-chalk"
+                    className="text-sm text-dust transition-colors duration-300 hover:text-chalk"
                   >
                     {item.label}
                   </a>

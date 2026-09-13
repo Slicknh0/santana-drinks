@@ -30,7 +30,7 @@ export function CopyAddressButton() {
       <button
         type="button"
         onClick={handleCopy}
-        className="inline-flex min-h-11 items-center gap-2.5 self-start text-sm font-medium text-dust transition-colors duration-300 hover:text-chalk"
+        className="inline-flex min-h-11 items-center gap-2.5 self-start text-sm text-dust transition-colors duration-300 hover:text-chalk"
       >
         <Icon name={state === "done" ? "check" : "copy"} className="size-[1.125rem] text-champagne" />
         {state === "done" ? copy.done : copy.idle}
