@@ -220,7 +220,7 @@
     letter-spacing: var(--tracking-plate);
     text-transform: uppercase;
     line-height: 1.05;
-    box-shadow: 0 24px 48px -24px rgb(0 0 0 / 0.8);
+    box-shadow: 0 24px 48px -24px rgb(8 6 2 / 0.85);
   }
 
   .street-plate::after {
@@ -452,6 +452,46 @@
     transition:
       transform 500ms var(--ease-out-expo),
       opacity 300ms var(--ease-out-expo);
+  }
+
+  .burger-line-top {
+    transform: translateY(-4px);
+  }
+
+  .burger-line-bottom {
+    transform: translateY(4px);
+  }
+
+  [aria-expanded="true"] > .burger-line-top {
+    transform: rotate(45deg);
+  }
+
+  [aria-expanded="true"] > .burger-line-bottom {
+    transform: rotate(-45deg);
+  }
+
+  /* Current section in the desktop nav: a champagne rule draws under the link. */
+  .nav-link {
+    position: relative;
+  }
+
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0.25rem;
+    height: 1px;
+    background-color: var(--color-champagne);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform var(--duration-calm) var(--ease-out-expo);
+  }
+
+  .nav-link[aria-current="location"] {
+    color: var(--color-chalk);
+  }
+
+  .nav-link[aria-current="location"]::after {
+    transform: scaleX(1);
   }
 }
 

@@ -19,6 +19,7 @@ function lockPage(locked: boolean) {
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [active, setActive] = useState<string | null>(null);
   const sentinel = useRef<HTMLDivElement>(null);
   const toggle = useRef<HTMLButtonElement>(null);
   const firstLink = useRef<HTMLAnchorElement>(null);
@@ -28,6 +29,24 @@ export function SiteHeader() {
     if (!target) return;
     const observer = new IntersectionObserver(([entry]) => setScrolled(!entry.isIntersecting));
     observer.observe(target);
+    return () => observer.disconnect();
+  }, []);
+
+  // Scroll-spy: the section crossing the middle of the viewport marks its nav link as current.
+  useEffect(() => {
+    const targets = ["#inicio", ...navigation.map((item) => item.href)]
+      .map((href) => document.querySelector<HTMLElement>(href))
+      .filter((element): element is HTMLElement => element !== null);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          setActive(entry.target.id === "inicio" ? null : `#${entry.target.id}`);
+        }
+      },
+      { rootMargin: "-45% 0px -50% 0px" },
+    );
+    targets.forEach((target) => observer.observe(target));
     return () => observer.disconnect();
   }, []);
 
@@ -84,7 +103,8 @@ export function SiteHeader() {
                 <li key={item.href}>
                   <a
                     href={item.href}
-                    className="inline-block py-2 text-sm text-dust transition-colors duration-300 hover:text-chalk"
+                    aria-current={active === item.href ? "location" : undefined}
+                    className="nav-link inline-block py-2 text-sm text-dust transition-colors duration-300 hover:text-chalk"
                   >
                     {item.label}
                   </a>
@@ -107,14 +127,8 @@ export function SiteHeader() {
             aria-label={open ? content.menu.close : content.menu.open}
             onClick={() => setOpen((value) => !value)}
           >
-            <span
-              className="burger-line absolute h-px w-6 bg-chalk"
-              style={{ transform: open ? "rotate(45deg)" : "translateY(-4px)" }}
-            />
-            <span
-              className="burger-line absolute h-px w-6 bg-chalk"
-              style={{ transform: open ? "rotate(-45deg)" : "translateY(4px)" }}
-            />
+            <span className="burger-line burger-line-top absolute h-px w-6 bg-chalk" />
+            <span className="burger-line burger-line-bottom absolute h-px w-6 bg-chalk" />
           </button>
         </div>
       </header>
@@ -131,8 +145,9 @@ export function SiteHeader() {
                 <a
                   ref={index === 0 ? firstLink : undefined}
                   href={item.href}
+                  aria-current={active === item.href ? "location" : undefined}
                   onClick={(event) => goTo(event, item.href)}
-                  className="display block py-2 text-[3.25rem] leading-none text-chalk"
+                  className="display block py-2 text-[3.25rem] leading-none text-chalk aria-[current=location]:text-champagne"
                 >
                   {item.label}
                 </a>

@@ -46,7 +46,6 @@ export const metadata: Metadata = {
     title: seo.title,
     description: seo.description,
   },
-  robots: { index: true, follow: true },
   formatDetection: { telephone: false, address: false, email: false },
 };
 
@@ -74,7 +73,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <div hidden dangerouslySetInnerHTML={{ __html: `<!--${designContract}-->` }} />
         <a
           href="#conteudo"
-          className="plate plate-solid sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[70]"
+          className="plate plate-solid sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-70"
         >
           {content.skipLink}
         </a>

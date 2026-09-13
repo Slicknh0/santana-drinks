@@ -81,6 +81,7 @@ export const content = {
     },
     map: {
       load: "Mostrar mapa",
+      loading: "Carregando mapa…",
       note: "O mapa interativo é carregado do Google Maps.",
       iframeTitle: "Mapa com a localização do Santana Drinks",
     },
@@ -88,6 +89,13 @@ export const content = {
 
   closing: {
     title: "Até mais tarde.",
+  },
+
+  notFound: {
+    title: "Esta página não existe.",
+    body: "O link pode estar errado ou a página saiu do ar. O endereço do bar continua o mesmo.",
+    homeCta: "Voltar ao início",
+    homeLabel: "Santana Drinks, voltar ao início",
   },
 
   footer: {

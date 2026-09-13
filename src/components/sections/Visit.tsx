@@ -98,15 +98,22 @@ export function Visit() {
             )}
           </dl>
 
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
-            <PlateLink href={directionsUrl} external icon="arrowUpRight">
+          {/* One filled plate for the main action; the secondary route is a quiet text link. */}
+          <div className="mt-10 flex flex-col items-start gap-x-8 gap-y-4 sm:flex-row sm:flex-wrap sm:items-center">
+            <PlateLink href={directionsUrl} external icon="arrowUpRight" className="w-full sm:w-auto">
               {content.primaryCta}
             </PlateLink>
-            <PlateLink href={business.googleMapsUrl} external variant="ghost">
+            <a
+              href={business.googleMapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-link text-sm text-chalk"
+            >
               {visit.mapsCta}
-            </PlateLink>
+              <span className="sr-only"> (abre em nova aba)</span>
+            </a>
           </div>
-          <div className="mt-3">
+          <div className="mt-2">
             <CopyAddressButton />
           </div>
         </div>
