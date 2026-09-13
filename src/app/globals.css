@@ -196,7 +196,9 @@
     box-shadow: inset 0 0 0 1px var(--color-champagne);
   }
 
+  /* Transform lives on this wrapper, not on the <svg>: SVG elements often skip GPU compositing. */
   .plate-icon {
+    display: inline-flex;
     flex: none;
     transition: transform var(--duration-calm) var(--ease-out-expo);
   }
